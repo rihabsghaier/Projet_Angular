@@ -1,27 +1,14 @@
-# Angularproject
+# Site web pour la détection des fraudes bancaires 
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.2.
+Ce projet est la partie front-end de Systéme de détection des fraudes bancaires permettant la vérification des signatures des clients (de la banque) sur les chéques ce qui permet de détecter les chéques falsifié anisi que la gestion des comptes des agents bancaires .  
 
-## Development server
+## Détails
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Cette partie renferme 6 interfaces :
+-Interface d'acceuil pour le login (component home) :  permet la redirection de chaque utilisateur vers la page correspondante selon le role :
+l'admin passe automatiquement à la page des listes des agents et l'agent passe à la page de vérification des signatures .
+-Interface de listes des agents bancaires (component admin) : l'admin peut supprimer un agent , modifier le state d'un agent et passer a la page de modification des données des agents ,  il peut aussi accéder à la page de vérification de signature
+-Interface de vérification de signature (component agent) : l'agent sélectionne un chéque à traiter et selon le résultat de l'algorithme de vérification décide si la signature est falsifié ou non 
+-Interface de register : a travers laquelle l'admin peut ajouter des comptes pour les agents(component register)
+-Interface pour la modification des données de agents (component update-agent)
+-Interface 404 (en cas d'erreur)
