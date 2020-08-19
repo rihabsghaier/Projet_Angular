@@ -1,0 +1,76 @@
+<app-header></app-header>
+<br />
+<br />
+<br />
+<br />
+<div align="center" style="color: ghostwhite;">
+  <form class="form-signin" [formGroup]="homeForm" (ngSubmit)="login()">
+    <img class="mb-4" src="/docs/4.4/assets/brand/bootstrap-solid.svg" alt="" />
+    <h1 class="h3 mb-3 font-weight-normal">
+      Please sign in
+    </h1>
+    <label for="inputIdentifiant" class="col-md-6">Identifiant </label>
+
+    <div class="col-sm-4">
+      <input
+        type="text"
+        id="inputIdentifiant"
+        class="form-control"
+        formControlName="Identifiant"
+      />
+      <div *ngIf="Identifiant.touched && Identifiant.invalid">
+        <small *ngIf="Identifiant.errors.required" class="form-text text-danger"
+          >Identifiant Required</small
+        >
+        <small *ngIf="Identifiant.errors.pattern" class="form-text text-danger"
+          >Invalid Identifiant</small
+        >
+        <small
+          *ngIf="Identifiant.errors.minlength"
+          class="form-text text-danger"
+          >JUST 8 numbers</small
+        >
+        <small
+          *ngIf="Identifiant.errors.maxlength"
+          class="form-text text-danger"
+          >JUST 8 numbers</small
+        >
+      </div>
+    </div>
+    <label for="inputPassword" class="col-md-6">Password</label>
+
+    <div class="col-sm-4">
+      <input
+        type="password"
+        id="inputPassword"
+        class="form-control"
+        formControlName="password"
+      />
+      <div *ngIf="password.touched && password.invalid">
+        <small *ngIf="password.errors.required" class="form-text text-danger"
+          >Password Required</small
+        >
+        <small *ngIf="password.errors.minlength" class="form-text text-danger"
+          >Invalid Password</small
+        >
+      </div>
+    </div>
+    <div class="checkbox sb-3">
+      <label> <input type="checkbox" value="remember-me" /> Remember me </label>
+    </div>
+
+    <div class="col-sm-4">
+      <button
+        class="btn btn-lg btn-primary btn-block"
+        [disabled]="homeForm.invalid || password.invalid"
+        type="submit"
+      >
+        Sign in
+      </button>
+    </div>
+    <br />
+    <p>
+      &copy; 2019-2020
+    </p>
+  </form>
+</div>

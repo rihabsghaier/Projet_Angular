@@ -1,0 +1,213 @@
+<app-header></app-header> <br />
+<br />
+<!--style="padding-left: 300px; -->
+<div class="container" style="font-weight: bold;">
+  <!--(ngSubmit)="saveAgent()"-->
+  <form [formGroup]="updateForm" (ngSubmit)="updateAgent()">
+    <div class="form-row">
+      <div class="col-md-4" style="padding-right: 20px;">
+        <div class="form-group">
+          <label for="firstname">Firstname</label>
+          <input
+            type="text"
+            class="form-control"
+            id="firstname"
+            name="firstname"
+            formControlName="Firstname"
+          />
+          <div *ngIf="Firstname.touched && Firstname.invalid">
+            <small
+              *ngIf="Firstname.errors.required"
+              class="form-text text-danger"
+              >firstname Required</small
+            >
+            <small
+              *ngIf="Firstname.errors.pattern"
+              class="form-text text-danger"
+              >Invalid firstname</small
+            >
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4" style="padding-left: 20px;">
+        <div class="form-group">
+          <label for="cin">CIN</label>
+          <input
+            type="text"
+            class="form-control"
+            id="cin"
+            name="cin"
+            formControlName="cin"
+          />
+          <div *ngIf="cin.touched && cin.invalid">
+            <small *ngIf="cin.errors.required" class="form-text text-danger"
+              >cin Required</small
+            >
+            <small *ngIf="cin.errors.pattern" class="form-text text-danger"
+              >Invalid cin</small
+            >
+            <small *ngIf="cin.errors.minlength" class="form-text text-danger"
+              >JUST 8 numbers</small
+            >
+            <small *ngIf="cin.errors.maxlength" class="form-text text-danger"
+              >JUST 8 numbers</small
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="col-md-4" style="padding-right: 20px;">
+        <div class="form-group">
+          <label for="lastname">Lastname</label>
+          <input
+            type="text"
+            class="form-control"
+            id="lastname"
+            name="lastname"
+            formControlName="Lastname"
+          />
+          <div *ngIf="Lastname.touched && Lastname.invalid">
+            <small
+              *ngIf="Lastname.errors.required"
+              class="form-text text-danger"
+              >lastname Required</small
+            >
+            <small *ngIf="Lastname.errors.pattern" class="form-text text-danger"
+              >Invalid lastname</small
+            >
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4" style="padding-left: 20px;">
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input
+            type="text"
+            class="form-control"
+            id="email"
+            name="email"
+            formControlName="email"
+          />
+          <div *ngIf="email.touched && email.invalid">
+            <small *ngIf="email.errors.required" class="form-text text-danger"
+              >Email Required</small
+            >
+            <small *ngIf="email.errors.email" class="form-text text-danger"
+              >Invalid Email</small
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="col-md-4" style="padding-right: 20px;">
+        <div class="form-group">
+          <label for="identifiant">Identifiant</label>
+          <input
+            type="text"
+            class="form-control"
+            id="identifiant"
+            name="identifiant"
+            formControlName="Identifiant"
+          />
+          <div *ngIf="Identifiant.touched && Identifiant.invalid">
+            <small
+              *ngIf="Identifiant.errors.required"
+              class="form-text text-danger"
+              >Identifiant Required</small
+            >
+            <small
+              *ngIf="Identifiant.errors.pattern"
+              class="form-text text-danger"
+              >Invalid Identifiant</small
+            >
+            <small
+              *ngIf="Identifiant.errors.minlength"
+              class="form-text text-danger"
+              >JUST 8 numbers</small
+            >
+            <small
+              *ngIf="Identifiant.errors.maxlength"
+              class="form-text text-danger"
+              >JUST 8 numbers</small
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4" style="padding-left: 20px;">
+        <div class="form-group">
+          <label for="phone">Phone</label>
+          <input
+            type="text"
+            class="form-control"
+            id="phone"
+            name="phone"
+            formControlName="phone"
+          />
+          <div *ngIf="phone.touched && phone.invalid">
+            <small *ngIf="phone.errors.required" class="form-text text-danger"
+              >phone Required</small
+            >
+            <small *ngIf="phone.errors.pattern" class="form-text text-danger"
+              >Invalid phone</small
+            >
+            <small *ngIf="phone.errors.minlength" class="form-text text-danger"
+              >Invalid phone , more than 8</small
+            >
+            <small *ngIf="phone.errors.maxlength" class="form-text text-danger"
+              >Invalid phone , less than 13</small
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="col-md-4" style="padding-right: 20px;">
+        <div class="form-group">
+          <label for="datenaissance">Date de naissance</label>
+          <input
+            type="text"
+            class="form-control"
+            id="datenaissance"
+            name="datenaissance"
+            formControlName="datenaissance"
+          />
+        </div>
+      </div>
+      <div class="col-md-4" style="padding-left: 20px;">
+        <div class="form-group">
+          <label for="address">Address</label>
+          <input
+            type="text"
+            class="form-control"
+            id="address"
+            name="address"
+            formControlName="address"
+          />
+          <div *ngIf="address.touched && address.invalid">
+            <small *ngIf="address.errors.required" class="form-text text-danger"
+              >address Required</small
+            >
+            <small *ngIf="address.errors.pattern" class="form-text text-danger"
+              >Invalid address</small
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <br />
+    <div style="padding-left: 329px;">
+      <button
+        type="submit"
+        class="btn btn-warning"
+        [disabled]="updateForm.invalid"
+      >
+        Update
+      </button>
+    </div>
+  </form>
+</div>
